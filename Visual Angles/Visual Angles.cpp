@@ -15,7 +15,6 @@ int main()
 
 
 
-    input(window, *new sf::Vector2<long float>{ 500,500 }, *new sf::Event(), *new sf::CircleShape(50));
     
 
 }
