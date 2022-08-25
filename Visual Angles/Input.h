@@ -2,38 +2,42 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#define PI 3.14159265359
-#define off 500
-
-int count = 0;
-
-
-struct p {
-	sf::Vector2f pos;
-	struct p* next;
-
-
-}square[] = {
-	/*
-		when the next varibale is marked as null, indicates end of shape
-
-
-		200, 200
-		200, 400
-		400, 400
-		400, 200
-	*/
-
-
-	* new sf::Vector2f(off + 200,off + 200), &square[int(count++)],
-	*new sf::Vector2f(off + 200, off + 400), &square[int(count++)],
-	*new sf::Vector2f(off+400, off+400), &square[int(count++)],
-	*new sf::Vector2f(off+400, off+200), NULL
+#include "shape.hpp"
 
 
 
+void m_loop(void) {
+	//global namespace of program
+	
+	//setting up shape
+	
+	//
+	
 
+	while (window.isOpen() == true) {
+		while (window.pollEvent(event)) {
+			//input checking goes here, output goes in drawing 
+			if (event.type == sf::Event::Closed) {
+				window.close();
+				return;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+				angle--;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+				angle++;
+			}
+		}
+		if (angle > 360)
+			angle = 0;
+		else if (angle <= 0)
+			angle = 360;
+	
 
+		//drawing goes here
+	}
 };
+
+
 
 
