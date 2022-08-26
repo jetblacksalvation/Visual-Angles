@@ -37,10 +37,9 @@ struct p {
 	*/
 
 
-	* new sf::Vector2f(off + 20,off - 20), &square[int(count++)],
-	*new sf::Vector2f(off + 20, off - 40), &square[int(count++)],
-	*new sf::Vector2f(off + 40, off - 40), &square[int(count++)],
-	*new sf::Vector2f(off + 40, off - 20), NULL
+	* new sf::Vector2f(off ,off+100 ), &square[int(count++)],
+	*new sf::Vector2f(off, off ), &square[int(count++)],
+	*new sf::Vector2f(off +100, off - 100), NULL
 
 };
 float distance(sf::Vector2f point1, sf::Vector2f point2) {
@@ -53,12 +52,14 @@ float distance(sf::Vector2f point1, sf::Vector2f point2) {
 void setup(void) {
 
 	
- 	lines.setPrimitiveType(sf::PrimitiveType::Quads);
+ 	lines.setPrimitiveType(sf::PrimitiveType::Triangles);
 	//pushes the vectors fro shape into lines
 	lines.append(*new sf::Vector2f(square[0].pos));
 	lines.append(*new sf::Vector2f(square[1].pos));
 	lines.append(*new sf::Vector2f(square[2].pos));
-	lines.append(*new sf::Vector2f(square[3].pos));
+	
+	//lines.append(*new sf::Vector2f(square[0].pos));
+	
 	
 
 }
