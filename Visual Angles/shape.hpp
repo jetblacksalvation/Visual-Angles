@@ -55,10 +55,10 @@ void setup(void) {
 	
  	lines.setPrimitiveType(sf::PrimitiveType::Quads);
 	//pushes the vectors fro shape into lines
-	lines.append(square[0].pos);
-	lines.append(square[1].pos);
-	lines.append(square[2].pos);
-	lines.append(square[3].pos);
+	lines.append(*new sf::Vector2f(square[0].pos));
+	lines.append(*new sf::Vector2f(square[1].pos));
+	lines.append(*new sf::Vector2f(square[2].pos));
+	lines.append(*new sf::Vector2f(square[3].pos));
 	
 
 }

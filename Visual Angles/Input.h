@@ -39,27 +39,23 @@ void m_loop(void) {
 		//from given angle update the position of vertices of square 
 		float temp;
 		for (int x = 0; x < lines.getVertexCount(); x++) {
-			//goes off to infinity for some reason 
-			//std::cout<<float(lines[x].position.x = (player.x + distance(lines[x].position, player))*cosf(angle))<<std::endl;
-			//std::cout<<float(lines[x].position.y = (player.y + distance(lines[x].position, player)) * sinf(angle))<<std::endl;
-			//std::cout << distance(lines[x].position, player) << std::endl;
-			
 			temp = distance(player, square[x].pos);
-			//lines[x].position.x = (temp+cosf(angle))+player.x;
-			//lines[x].position.y = (temp + sinf(angle)) + player.y;
-			lines[x].position = *new sf::Vector2f(((temp + cosf(angle)) + player.x), ((temp + sinf(angle)) + player.y));
-
+			lines[x].position  =  sf::Vector2f{ temp + cosf(angle) + player.x, temp + sinf(angle) + player.y}, sf::Color::White;
 
 			std::cout << lines[x].position.x << "is the x pos\n";
 			std::cout << lines[x].position.y << "is hte y pos\n\n";
-		}
-			
-		
+		};
+
 		window.clear(sf::Color::Black);
 		window.draw(lines);
 		window.display();
 		//drawing goes here
+			
 	}
+			
+		
+		
+	
 };
 
 
