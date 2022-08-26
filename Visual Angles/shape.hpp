@@ -37,10 +37,10 @@ struct p {
 	*/
 
 
-	* new sf::Vector2f(off + 200,off - 200), &square[int(count++)],
-	*new sf::Vector2f(off + 200, off - 400), &square[int(count++)],
-	*new sf::Vector2f(off + 400, off - 400), &square[int(count++)],
-	*new sf::Vector2f(off + 400, off - 200), NULL
+	* new sf::Vector2f(off + 20,off - 20), &square[int(count++)],
+	*new sf::Vector2f(off + 20, off - 40), &square[int(count++)],
+	*new sf::Vector2f(off + 40, off - 40), &square[int(count++)],
+	*new sf::Vector2f(off + 40, off - 20), NULL
 
 };
 float distance(sf::Vector2f point1, sf::Vector2f point2) {

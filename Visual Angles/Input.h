@@ -45,8 +45,13 @@ void m_loop(void) {
 			//std::cout << distance(lines[x].position, player) << std::endl;
 			
 			temp = distance(player, square[x].pos);
-			lines[x].position.x = (temp+cosf(angle))+player.x;
-			lines[x].position.y = (temp + sinf(angle)) + player.y;
+			//lines[x].position.x = (temp+cosf(angle))+player.x;
+			//lines[x].position.y = (temp + sinf(angle)) + player.y;
+			lines[x].position = *new sf::Vector2f(((temp + cosf(angle)) + player.x), ((temp + sinf(angle)) + player.y));
+
+
+			std::cout << lines[x].position.x << "is the x pos\n";
+			std::cout << lines[x].position.y << "is hte y pos\n\n";
 		}
 			
 		
